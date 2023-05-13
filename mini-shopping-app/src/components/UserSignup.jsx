@@ -17,7 +17,9 @@ import {
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   import {useDispatch,useSelector} from 'react-redux'
-import { userSignup } from '../redux/AuthReducer/action';
+   import { userSignup } from '../redux/AuthReducer/action';
+import { useNavigate } from 'react-router-dom';
+import { useToast } from '@chakra-ui/react'
   export default function UserSignup() {
     const [showPassword, setShowPassword] = useState(false);
     const [Name, setName] = useState("")
@@ -25,12 +27,34 @@ import { userSignup } from '../redux/AuthReducer/action';
     const [Mobile, setMobile] = useState("")
     const [Password, setPassword] = useState("")
     const [ConfirmPassword, setConfirmPassword] = useState("")
+    const toast = useToast()
 const dispatch=useDispatch()
-
+const navigate=useNavigate()
+console.log(Name,Email,Mobile,Password,ConfirmPassword)
     const handleSignup=()=>{
-      dispatch(userSignup(Name,Email,Mobile,Password,ConfirmPassword)).then((res)=>{
-        alert('Signup Success')
-      })
+      if(Password==ConfirmPassword){
+        dispatch(userSignup(Name,Email,Mobile,Password,ConfirmPassword)).then((res)=>{
+          toast({
+            title: 'Signup Successful.',
+            description: "Please Login Your Account.",
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })
+          navigate('/userlogin')
+        })
+      }else{
+        toast({
+          title: 'Signup Failed.',
+          description: "please fill all the credentials and both of the password should match.",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
+       
+      }
+     
+     
     }
 
 
@@ -46,7 +70,7 @@ const dispatch=useDispatch()
               Sign up
             </Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our cool services ✌️
+              to enjoy all of our cool services  ✌️
             </Text>
           </Stack>
 

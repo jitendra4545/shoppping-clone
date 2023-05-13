@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import  {UserLogin}  from '../components/UserLogin'
+import  UserLogin  from '../components/UserLogin'
 import  UserSignup  from '../components/UserSignup'
 
 export const AllRoutes = () => {
