@@ -16,7 +16,8 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-  
+  import {useDispatch,useSelector} from 'react-redux'
+import { userSignup } from '../redux/AuthReducer/action';
   export default function UserSignup() {
     const [showPassword, setShowPassword] = useState(false);
     const [Name, setName] = useState("")
@@ -24,7 +25,15 @@ import {
     const [Mobile, setMobile] = useState("")
     const [Password, setPassword] = useState("")
     const [ConfirmPassword, setConfirmPassword] = useState("")
-  
+const dispatch=useDispatch()
+
+    const handleSignup=()=>{
+      dispatch(userSignup(Name,Email,Mobile,Password,ConfirmPassword)).then((res)=>{
+        alert('Signup Success')
+      })
+    }
+
+
     return (
       <Flex
         minH={'100vh'}
@@ -40,6 +49,7 @@ import {
               to enjoy all of our cool services ✌️
             </Text>
           </Stack>
+
           <Box
             rounded={'lg'}
             bg={useColorModeValue('white', 'gray.700')}
@@ -50,24 +60,24 @@ import {
                 <Box>
                   <FormControl id="firstName" isRequired>
                     <FormLabel>First Name</FormLabel>
-                    <Input type="text" />
+                    <Input onChange={(e)=>setName(e.target.value)} type="text" />
                   </FormControl>
                 </Box>
                 <Box>
                   <FormControl id="lastName">
                     <FormLabel>Mobile</FormLabel>
-                    <Input type="number" />
+                    <Input onChange={(e)=>setMobile(e.target.value)} type="number" />
                   </FormControl>
                 </Box>
               </HStack>
               <FormControl id="email" isRequired>
                 <FormLabel>Email address</FormLabel>
-                <Input type="email" />
+                <Input type="email" onChange={(e)=>setEmail(e.target.value)} />
               </FormControl>
               <FormControl id="pssword" isRequired>
                 <FormLabel>Password</FormLabel>
                 <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} />
+                  <Input onChange={(e)=>setPassword(e.target.value)} type={showPassword ? 'text' : 'password'} />
                   <InputRightElement h={'full'}>
                     <Button
                       variant={'ghost'}
@@ -81,10 +91,11 @@ import {
               </FormControl>
               <FormControl id="password" isRequired>
                 <FormLabel>Confirm Password</FormLabel>
-                <Input type="text" />
+                <Input onChange={(e)=>setConfirmPassword(e.target.value)} type="text" />
               </FormControl>
               <Stack spacing={10} pt={2}>
                 <Button
+                onClick={handleSignup}
                   loadingText="Submitting"
                   size="lg"
                   bg={'blue.400'}
