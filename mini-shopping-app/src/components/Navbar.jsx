@@ -5,14 +5,21 @@ import {ImHeart} from 'react-icons/im'
 import {BsSearch,BsCart4} from 'react-icons/bs'
 import { useSelector } from 'react-redux'
 import { useMediaQuery } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
 const link=[
-  {"name":"MENS"},
-  {"name":"WOMENS"},
-  {"name":"KIDS"},
-  {"name":"GIFTS"},
-  {"name":"HOME & KITCHEN"},
-  {"name":"BEAUTY"}
+  {"name":"MENS",
+"link":"/Men"},
+  {"name":"WOMENS",
+  "link":"/Women"},
+  {"name":"KIDS",
+  "link":"/Kid"},
+  {"name":"GIFTS",
+  "link":"/Gift"},
+  {"name":"HOME & KITCHEN",
+  "link":"/Homekitchen"},
+  {"name":"BEAUTY",
+  "link":"/Beauty"}
 
 ]
 
@@ -25,17 +32,17 @@ const [isSmall] = useMediaQuery('(min-width: 1430px)')
   return (
     <Box bg='teal.100' p="5px 10px"  h='70px' boxShadow={'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;'} > 
       <Box display={'flex'} justifyContent={'center'} alignItems={'center'} >
-      <Box>
+      <Link to='/'><Box>
         <Image borderRadius={'30px'} w={{base:"30px",md:"40px",lg:"60px"}} src='https://i.postimg.cc/BbcZrkVF/Pink-and-Black-Modern-Initials-Logo-Design.png'  />
-      </Box>
+      </Box></Link>
 <Tabs>
 <TabList>
 
       {
         link.map((el)=>{
-return <Tab bg='teal.100' _hover={{'bg':"blue",color:"white"}} ml={{base:0,md:0,lg:8}} key={el.name} >
+return <Link to={el.link} ><Tab bg='teal.100' _hover={{'bg':"blue",color:"white"}} ml={{base:0,md:0,lg:8}} key={el.name} >
          {el.name}  
-            </Tab>
+            </Tab></Link>
         })
       }
       </TabList>
