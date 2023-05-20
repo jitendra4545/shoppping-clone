@@ -37,11 +37,7 @@ const [count,setcount]=useState(0)
   },[])
 
   console.log(Timeref,"abcd",count)
-  // const handleReset = () => {
-  //   clearInterval(Timeref.current);
-  //   Timeref.current = null;
-  //   setTime(0);
-  // };
+  
 
 
 
@@ -49,7 +45,6 @@ const [count,setcount]=useState(0)
   
   return (
     <Box>
-      <Heading>{count}</Heading>
        <Box>
        <Image w='100%' src={`${banners[count]}`} />
        </Box>
