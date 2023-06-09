@@ -5,7 +5,7 @@ import { Navbar } from '../components/Navbar'
 
 
 
-const banners=[
+const banners = [
   "https://cdn.shopclues.com/images/banners/2023/May/05/Intel_Gaming_Web_4May23.jpg",
   "https://cdn.shopclues.com/images/banners/2023/May/05/HB4_JDD_Web_Esha_5thMay23.jpg",
   "https://cdn.shopclues.com/images/banners/2023/May/17/HB3_Puma_Web_SYM_17May23.jpg",
@@ -14,40 +14,28 @@ const banners=[
 ]
 
 export const HomePage = () => {
-  const Timeref=useRef(null)
-const [count,setcount]=useState(0)
-  useEffect(()=>{
-    
+  const [int, setint] = useState(null)
+  const [count, setcount] = useState(0)
+  const handleNext = () => {
+    setcount((prevIndex) => (prevIndex + 1) % banners.length)
+  }
+  useEffect(() => {
+    setint(setInterval(handleNext, 3000))
+  }, [])
 
-   if (Timeref.current!==null  ) return 
-
-    Timeref.current=setInterval(()=>{
-      setcount((prev)=>{
-        if(prev==banners.length-1){
-          clearInterval(Timeref.current)
-          Timeref.current=null
-           setcount(0) 
-        } 
-       return prev+1
-      })
-      // console.log("count",count)
-    },3000)
-  
-  
-  },[])
-
-  console.log(Timeref,"abcd",count)
-  
+  console.log(int,"abcd", banners[count])
 
 
 
 
-  
+
+
   return (
     <Box>
-       <Box>
-       <Image w='100%' src={`${banners[count]}`} />
-       </Box>
-   </Box>
+      <Box>
+        <Image w='100%' src={banners[count]} />
+        <Heading>Count :- {count}</Heading>
+      </Box>
+    </Box>
   )
 }
