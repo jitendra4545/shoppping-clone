@@ -12,8 +12,9 @@ import {
     Heading,
     Text,
     useColorModeValue,
-    Link,
+   
   } from '@chakra-ui/react';
+  import { Link } from 'react-router-dom';
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
   import {useDispatch,useSelector} from 'react-redux'
@@ -132,7 +133,7 @@ console.log(Name,Email,Mobile,Password,ConfirmPassword)
               </Stack>
               <Stack pt={6}>
                 <Text align={'center'}>
-                  Already a user? <Link to='/userlogin' color={'blue.400'}>Login</Link>
+                  Already a user? <Link to='/userlogin' >Login</Link>
                 </Text>
               </Stack>
             </Stack>

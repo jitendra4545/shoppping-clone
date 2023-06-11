@@ -6,12 +6,13 @@ import {
   Input,
   Checkbox,
   Stack,
-  Link,
+  
   Button,
   Heading,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { userLogin } from '../redux/AuthReducer/action';
@@ -84,6 +85,11 @@ const handleLogin=()=>{
                 
               </Button>
             </Stack>
+            <Stack pt={6}>
+                <Text align={'center'}>
+                If you are not register yet ? <Link to='/usersignup' >SignUp</Link>
+                </Text>
+              </Stack>
           </Stack>
         </Box>
       </Stack>

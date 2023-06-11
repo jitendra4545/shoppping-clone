@@ -18,7 +18,7 @@ const link=[
   "link":"/Gift"},
   {"name":"HOME & KITCHEN",
   "link":"/Homekitchen"},
-  {"name":"BEAUTY",
+  {"name":"ELECTRONICS",
   "link":"/Beauty"}
 
 ]
