@@ -20,7 +20,7 @@ export const HomePage = () => {
     setcount((prevIndex) => (prevIndex + 1) % banners.length)
   }
   useEffect(() => {
-    setint(setInterval(handleNext, 3000))
+    setint(setInterval(handleNext, 4000))
   }, [])
 
   console.log(int,"abcd", banners[count])
@@ -32,9 +32,9 @@ export const HomePage = () => {
 
   return (
     <Box>
-      <Box>
-        <Image w='100%' src={banners[count]} />
-        <Heading>Count :- {count}</Heading>
+      <Box display={"flex"}>
+        <Image w='auto' src={banners[count]} />
+        
       </Box>
     </Box>
   )

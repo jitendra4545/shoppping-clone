@@ -70,7 +70,7 @@ console.log(Name,Email,Mobile,Password,ConfirmPassword)
               Sign up
             </Heading>
             <Text fontSize={'lg'} color={'gray.600'}>
-              to enjoy all of our cool services  ✌️
+              to enjoy all of our cool services in Local Mart  ✌️
             </Text>
           </Stack>
 
@@ -118,7 +118,7 @@ console.log(Name,Email,Mobile,Password,ConfirmPassword)
                 <Input onChange={(e)=>setConfirmPassword(e.target.value)} type="text" />
               </FormControl>
               <Stack spacing={10} pt={2}>
-                <Button
+               <Button
                 onClick={handleSignup}
                   loadingText="Submitting"
                   size="lg"
@@ -132,7 +132,7 @@ console.log(Name,Email,Mobile,Password,ConfirmPassword)
               </Stack>
               <Stack pt={6}>
                 <Text align={'center'}>
-                  Already a user? <Link color={'blue.400'}>Login</Link>
+                  Already a user? <Link to='/userlogin' color={'blue.400'}>Login</Link>
                 </Text>
               </Stack>
             </Stack>

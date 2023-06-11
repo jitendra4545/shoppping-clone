@@ -40,7 +40,7 @@ const [isSmall] = useMediaQuery('(min-width: 1430px)')
 
       {
         link.map((el)=>{
-return <Link to={el.link} ><Tab bg='teal.100' _hover={{'bg':"blue",color:"white"}} ml={{base:0,md:0,lg:8}} key={el.name} >
+return <Link to={el.link} ><Tab borderRadius={'20px'} bg='teal.100' _hover={{'bg':"blue",color:"white"}} ml={{base:0,md:0,lg:6}} fontWeight={'bold'} key={el.name} >
          {el.name}  
             </Tab></Link>
         })
@@ -127,7 +127,7 @@ return <Link to={el.link} ><Tab bg='teal.100' _hover={{'bg':"blue",color:"white"
         >
           
           
-            <Button colorScheme='green'>LogOut</Button>
+          <Link to='/userlogin' >  <Button colorScheme='green'>LogIn</Button></Link>
            
         
         </PopoverFooter>
