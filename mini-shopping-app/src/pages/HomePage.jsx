@@ -10,7 +10,8 @@ const banners = [
   "https://cdn.shopclues.com/images/banners/2023/May/05/HB4_JDD_Web_Esha_5thMay23.jpg",
   "https://cdn.shopclues.com/images/banners/2023/May/17/HB3_Puma_Web_SYM_17May23.jpg",
   "https://cdn.shopclues.com/images/banners/2023/May/19/Fun-tasticFridayDeals_Web_SYM_19May23.jpg",
-  "https://cdn.shopclues.com/images/banners/2023/May/05/HB2_RefurbMobile_Web_SYM_05May23.jpg"
+  "https://cdn.shopclues.com/images/banners/2023/May/05/HB2_RefurbMobile_Web_SYM_05May23.jpg",
+  "https://cdn.shopclues.com/images/banners/2023/June/06/HB1_Brand-tasticFootwear_Web_SYM_06June.jpg"
 ]
 
 const offers = [
@@ -41,7 +42,7 @@ export const HomePage = () => {
 
 
   return (
-    <Box>
+    <Box bg="#e9f6f7">
       <Box  display={"flex"}>
         <Image w='auto' src={banners[count]} />
       </Box>
@@ -51,11 +52,11 @@ export const HomePage = () => {
           <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["DealsOfTheDay"].map((el, i) => {
-              return <Box padding={'20px 5px'} _hover={{border:"4px solid skyblue"}}  key={i} >
+              return <Box bg="white"  padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}   key={i} >
                 <Image w={'70%'} src={el.image} margin={"auto"} />
-                <Text noOfLines={1}>{el.title}</Text>
+                <Text mb='10px' noOfLines={1}>{el.title}</Text>
                 <Box display={"flex"} justifyContent={'space-evenly'} >
-                  <Box><Text>₹{300}</Text></Box>
+                  <Box><Text fontWeight={'bold'} >₹{300}</Text></Box>
                   <Box><Text textDecoration={"line-through"} >{el.strike_price}</Text></Box>
                   <Box><Text color={'teal.500'} fontWeight={'bold'} >{el.discount}</Text></Box>
                 </Box>
@@ -70,15 +71,15 @@ export const HomePage = () => {
           <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["YourGadgetStore"].map((el, i) => {
-              return <Box padding={'20px 5px'} _hover={{border:"4px solid skyblue"}}  key={i} >
-                <Image w={'70%'} src={el.image} margin={"auto"} />
-                <Text noOfLines={1}>{el.title}</Text>
-                <Box display={"flex"} justifyContent={'space-evenly'} >
-                  <Box><Text>₹{300}</Text></Box>
-                  <Box><Text textDecoration={"line-through"} >{el.strike_price}</Text></Box>
-                  <Box><Text color={'teal.500'} fontWeight={'bold'} >{el.discount}</Text></Box>
-                </Box>
+              return <Box  bg="white" padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}   key={i} >
+              <Image w={'70%'} src={el.image} margin={"auto"} />
+              <Text mb='10px' noOfLines={1}>{el.title}</Text>
+              <Box display={"flex"} justifyContent={'space-evenly'} >
+                <Box><Text fontWeight={'bold'} >₹{300}</Text></Box>
+                <Box><Text textDecoration={"line-through"} >{el.strike_price}</Text></Box>
+                <Box><Text color={'teal.500'} fontWeight={'bold'} >{el.discount}</Text></Box>
               </Box>
+            </Box>
             })
             }
           </Box>
@@ -89,15 +90,15 @@ export const HomePage = () => {
           <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["MensClothing"].map((el, i) => {
-              return <Box padding={'20px 5px'} _hover={{border:"4px solid skyblue"}}  key={i} >
-                <Image w={'70%'} src={el.image} margin={"auto"} />
-                <Text noOfLines={1}>{el.title}</Text>
-                <Box display={"flex"} justifyContent={'space-evenly'} >
-                  <Box><Text>₹{300}</Text></Box>
-                  <Box><Text textDecoration={"line-through"} >{el.strike_price}</Text></Box>
-                  <Box><Text color={'teal.500'} fontWeight={'bold'} >{el.discount}</Text></Box>
-                </Box>
+              return <Box bg="white" padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}   key={i} >
+              <Image w={'70%'} src={el.image} margin={"auto"} />
+              <Text mb='10px' noOfLines={1}>{el.title}</Text>
+              <Box display={"flex"} justifyContent={'space-evenly'} >
+                <Box><Text fontWeight={'bold'} >₹{300}</Text></Box>
+                <Box><Text textDecoration={"line-through"} >{el.strike_price}</Text></Box>
+                <Box><Text color={'teal.500'} fontWeight={'bold'} >{el.discount}</Text></Box>
               </Box>
+            </Box>
             })
             }
           </Box>
@@ -108,15 +109,15 @@ export const HomePage = () => {
           <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["WomensFasion"].map((el, i) => {
-              return <Box padding={'20px 5px'} _hover={{border:"4px solid skyblue"}}  key={i} >
-                <Image w={'70%'} src={el.image} margin={"auto"} />
-                <Text noOfLines={1}>{el.title}</Text>
-                <Box display={"flex"} justifyContent={'space-evenly'} >
-                  <Box><Text>₹{300}</Text></Box>
-                  <Box><Text textDecoration={"line-through"} >{el.strike_price}</Text></Box>
-                  <Box><Text color={'teal.500'} fontWeight={'bold'} >{el.discount}</Text></Box>
-                </Box>
-              </Box>
+             return <Box bg="white" padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}   key={i} >
+             <Image w={'70%'} src={el.image} margin={"auto"} />
+             <Text mb='10px' noOfLines={1}>{el.title}</Text>
+             <Box display={"flex"} justifyContent={'space-evenly'} >
+               <Box><Text fontWeight={'bold'} >₹{300}</Text></Box>
+               <Box><Text textDecoration={"line-through"} >{el.strike_price}</Text></Box>
+               <Box><Text color={'teal.500'} fontWeight={'bold'} >{el.discount}</Text></Box>
+             </Box>
+           </Box>
             })
             }
           </Box>
@@ -128,43 +129,19 @@ export const HomePage = () => {
           <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["Footwear"].map((el, i) => {
-              return <Box padding={'20px 5px'} _hover={{border:"4px solid skyblue"}}  key={i} >
-                <Image w={'70%'} src={el.image} margin={"auto"} />
-                <Text noOfLines={1}>{el.title}</Text>
-                <Box display={"flex"} justifyContent={'space-evenly'} >
-                  <Box><Text>₹{300}</Text></Box>
-                  <Box><Text textDecoration={"line-through"} >{el.strike_price}</Text></Box>
-                  <Box><Text color={'teal.500'} fontWeight={'bold'} >{el.discount}</Text></Box>
-                </Box>
-              </Box>
+             return <Box  bg="white" padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}   key={i} >
+             <Image w={'70%'} src={el.image} margin={"auto"} />
+             <Text mb='10px' noOfLines={1}>{el.title}</Text>
+             <Box display={"flex"} justifyContent={'space-evenly'} >
+               <Box><Text fontWeight={'bold'} >₹{300}</Text></Box>
+               <Box><Text textDecoration={"line-through"} >{el.strike_price}</Text></Box>
+               <Box><Text color={'teal.500'} fontWeight={'bold'} >{el.discount}</Text></Box>
+             </Box>
+           </Box>
             })
             }
           </Box>
         </Box>  
-
-
-        <Box>
-          <Text padding={'10px 0'} fontWeight={'bold'} fontSize={'20px'} textAlign={'left'} >Footwear</Text>
-          <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
-
-            {HomePageData["BrandStore"].map((el, i) => {
-              return <Box padding={'20px 5px'} _hover={{border:"4px solid skyblue"}}  key={i} >
-                <Image w={'70%'} src={el.image} margin={"auto"} />
-                <Text noOfLines={1}>{el.title}</Text>
-                <Box display={"flex"} justifyContent={'space-evenly'} >
-                  <Box><Text>₹{300}</Text></Box>
-                  <Box><Text textDecoration={"line-through"} >{el.strike_price}</Text></Box>
-                  <Box><Text color={'teal.500'} fontWeight={'bold'} >{el.discount}</Text></Box>
-                </Box>
-              </Box>
-            })
-            }
-          </Box>
-        </Box>  
-
-
-
-//BrandStore
 
 
         <Box>
@@ -179,6 +156,27 @@ export const HomePage = () => {
             }
           </Box>
         </Box>
+
+
+        <Box>
+          <Text padding={'10px 0'} fontWeight={'bold'} fontSize={'20px'} textAlign={'left'} >Brand Store</Text>
+          <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
+
+            {HomePageData["BrandStore"].map((el, i) => {
+              return <Box bg="white" padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}  key={i} >
+                <Image w="auto" h={'170px'} src={el.image} margin={"auto"} />
+                <Text mb="10px" textAlign={'left'} noOfLines={1}>{el.title}</Text>
+                <Box display={"flex"}  >
+                  
+                  <Box><Text textAlign={'left'} fontWeight={'bold'} >{el.strike_price}</Text></Box>
+                </Box>
+              </Box>
+            })
+            }
+          </Box>
+        </Box>  
+
+
       </Box>
     </Box>
   )
