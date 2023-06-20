@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navbar } from '../components/Navbar'
 import HomePageData from '../asset/HomePageData.json'
 
