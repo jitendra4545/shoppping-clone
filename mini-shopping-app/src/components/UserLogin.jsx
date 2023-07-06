@@ -6,7 +6,6 @@ import {
   Input,
   Checkbox,
   Stack,
-  
   Button,
   Heading,
   Text,
@@ -22,21 +21,21 @@ export default function UserLogin() {
   const toast = useToast()
   const [Password, setPassword] = useState("")
   const [Email, setEmail] = useState("")
-const dispatch=useDispatch()
-const navigate=useNavigate()
-const handleLogin=()=>{
-  dispatch(userLogin(Email,Password)).then(()=>{
-    toast({
-      title: 'Login Successful.',
-      description: "Welcome To LocalMart.",
-      status: 'success',
-      duration: 9000,
-      isClosable: true,
-    })
-    
-    navigate("/")
-  }).catch((err)=>console.log(err))
-}
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const handleLogin = () => {
+    dispatch(userLogin(Email, Password)).then(() => {
+      toast({
+        title: 'Login Successful.',
+        description: "Welcome To LocalMart.",
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
+
+      navigate("/")
+    }).catch((err) => console.log(err))
+  }
 
 
   return (
@@ -60,11 +59,11 @@ const handleLogin=()=>{
           <Stack spacing={4}>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input onChange={(e)=>setEmail(e.target.value)} type="email" />
+              <Input onChange={(e) => setEmail(e.target.value)} type="email" />
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input onChange={(e)=>setPassword(e.target.value)} type="password" />
+              <Input onChange={(e) => setPassword(e.target.value)} type="password" />
             </FormControl>
             <Stack spacing={10}>
               <Stack
@@ -75,21 +74,21 @@ const handleLogin=()=>{
                 <Link color={'blue.400'}>Forgot password?</Link>
               </Stack>
               <Button
-              onClick={handleLogin}
+                onClick={handleLogin}
                 bg={'blue.400'}
                 color={'white'}
                 _hover={{
                   bg: 'blue.600',
                 }}>
                 Sign in
-                
+
               </Button>
             </Stack>
             <Stack pt={6}>
-                <Text align={'center'}>
+              <Text align={'center'}>
                 If you are not register yet ? <Link to='/usersignup' >SignUp</Link>
-                </Text>
-              </Stack>
+              </Text>
+            </Stack>
           </Stack>
         </Box>
       </Stack>

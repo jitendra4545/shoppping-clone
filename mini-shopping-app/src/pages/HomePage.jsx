@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { Navbar } from '../components/Navbar'
 import HomePageData from '../asset/HomePageData.json'
+import { Link } from 'react-router-dom'
 
 
 
@@ -49,7 +50,7 @@ export const HomePage = () => {
       <Box padding={'0 20px'}>
       <Box>
           <Text padding={'10px 0'} fontWeight={'bold'} fontSize={'20px'} textAlign={'left'} >Deals Of The Day</Text>
-          <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
+        <Link to='/products'> <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["DealsOfTheDay"].map((el, i) => {
               return <Box bg="white"  padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}   key={i} >
@@ -63,12 +64,12 @@ export const HomePage = () => {
               </Box>
             })
             }
-          </Box>
+          </Box></Link> 
         </Box>
 
         <Box>
           <Text padding={'10px 0'} fontWeight={'bold'} fontSize={'20px'} textAlign={'left'} >Your Gadget Store</Text>
-          <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
+          <Link to='/products'>   <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["YourGadgetStore"].map((el, i) => {
               return <Box  bg="white" padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}   key={i} >
@@ -82,12 +83,12 @@ export const HomePage = () => {
             </Box>
             })
             }
-          </Box>
+          </Box></Link>
         </Box>
 
         <Box>
           <Text padding={'10px 0'} fontWeight={'bold'} fontSize={'20px'} textAlign={'left'} >Mens Clothing</Text>
-          <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
+         <Link to='/products'>  <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["MensClothing"].map((el, i) => {
               return <Box bg="white" padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}   key={i} >
@@ -101,12 +102,12 @@ export const HomePage = () => {
             </Box>
             })
             }
-          </Box>
+          </Box></Link>
         </Box>
 
         <Box>
           <Text padding={'10px 0'} fontWeight={'bold'} fontSize={'20px'} textAlign={'left'} >Womens Fasion</Text>
-          <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
+         <Link to='/products'>  <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["WomensFasion"].map((el, i) => {
              return <Box bg="white" padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}   key={i} >
@@ -120,13 +121,13 @@ export const HomePage = () => {
            </Box>
             })
             }
-          </Box>
+          </Box></Link>
         </Box>  
 
 
         <Box>
           <Text padding={'10px 0'} fontWeight={'bold'} fontSize={'20px'} textAlign={'left'} >Footwear</Text>
-          <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
+         <Link to='/products'>  <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["Footwear"].map((el, i) => {
              return <Box  bg="white" padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}   key={i} >
@@ -140,7 +141,7 @@ export const HomePage = () => {
            </Box>
             })
             }
-          </Box>
+          </Box></Link>
         </Box>  
 
 
@@ -160,7 +161,7 @@ export const HomePage = () => {
 
         <Box>
           <Text padding={'10px 0'} fontWeight={'bold'} fontSize={'20px'} textAlign={'left'} >Brand Store</Text>
-          <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
+        <Link to='/products'>   <Box display={'grid'} gridTemplateColumns={"repeat(6,1fr)"} >
 
             {HomePageData["BrandStore"].map((el, i) => {
               return <Box bg="white" padding={'30px 10px'} _hover={{border:"1px solid skyblue",boxShadow:"rgba(0, 0, 0, 0.24) 0px 3px 8px;"}}  key={i} >
@@ -173,7 +174,7 @@ export const HomePage = () => {
               </Box>
             })
             }
-          </Box>
+          </Box></Link>
         </Box>  
 
 

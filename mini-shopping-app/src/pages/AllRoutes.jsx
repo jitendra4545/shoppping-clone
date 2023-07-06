@@ -9,6 +9,7 @@ import { Men } from './Men'
 import { Women } from './Women'
 import { HomeKitchen } from './Home&Kitchen'
 import { Kid } from './Kid'
+import { ProductPage } from './ProductPage'
 
 export const AllRoutes = () => {
   return (
@@ -22,6 +23,7 @@ export const AllRoutes = () => {
         <Route path='/Homekitchen' element={<HomeKitchen/>} />
         <Route path='/userlogin' element={<UserLogin/>} />
         <Route path='/usersignup' element={<UserSignup/>} />
+        <Route path='/products' element={<ProductPage/>} />
     </Routes>
   )
 }
